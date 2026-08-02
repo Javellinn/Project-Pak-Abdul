@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar — CINEMAXE</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ================================================
+       AUTH PAGE — REGISTER
+       ================================================ -->
+  <div class="auth-page">
+    <div class="auth-container" style="max-width:500px;">
+
+      <!-- Logo -->
+      <div class="auth-header">
+        <div class="auth-logo">CINEMA<span>XE</span></div>
+        <p class="auth-subtitle">Buat Akun Baru</p>
+      </div>
+
+      <!-- Card -->
+      <div class="auth-card">
+        <h2>Daftar</h2>
+        <p class="auth-desc">Bergabunglah dan nikmati kemudahan pemesanan tiket bioskop.</p>
+
+        <form action="login.html" method="get">
+
+          <!-- Nama Lengkap -->
+          <div class="form-group">
+            <label for="fullname">Nama Lengkap</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              class="form-control"
+              placeholder="Nama lengkap Anda"
+              required
+            />
+          </div>
+
+          <!-- Email & Nomor HP -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="nama@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Nomor HP</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-control"
+                placeholder="08xxxxxxxxxx"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Tanggal Lahir & Jenis Kelamin -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="dob">Tanggal Lahir</label>
+              <input
+                type="date"
+                id="dob"
+                name="dob"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="gender">Jenis Kelamin</label>
+              <select id="gender" name="gender" class="form-control">
+                <option value="">Pilih...</option>
+                <option value="L">Laki-laki</option>
+                <option value="P">Perempuan</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Kata Sandi -->
+          <div class="form-group">
+            <label for="password">Kata Sandi</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Min. 8 karakter"
+                required
+              />
+              <span class="input-icon">🔒</span>
+            </div>
+            <div class="form-hint">Gunakan kombinasi huruf, angka, dan simbol.</div>
+          </div>
+
+          <!-- Konfirmasi Kata Sandi -->
+          <div class="form-group">
+            <label for="confirm">Konfirmasi Kata Sandi</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="confirm"
+                name="confirm"
+                class="form-control"
+                placeholder="Ulangi kata sandi"
+                required
+              />
+              <span class="input-icon">🔑</span>
+            </div>
+          </div>
+
+          <!-- Setuju T&C -->
+          <div class="form-group" style="margin-bottom:24px;">
+            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; text-transform:none; letter-spacing:0; font-size:13px; color:var(--text-muted); margin:0; line-height:1.5;">
+              <input type="checkbox" name="agree" required style="accent-color: var(--accent-red); margin-top:3px; flex-shrink:0;" />
+              Saya setuju dengan <a href="#" style="margin-left:4px;">Syarat & Ketentuan</a> serta
+              <a href="#" style="margin-left:4px;">Kebijakan Privasi</a> CINEMAXE.
+            </label>
+          </div>
+
+          <!-- Berlangganan Newsletter -->
+          <div class="form-group" style="margin-bottom:28px;">
+            <label style="display:flex; align-items:center; gap:10px; cursor:pointer; text-transform:none; letter-spacing:0; font-size:13px; color:var(--text-muted); margin:0;">
+              <input type="checkbox" name="newsletter" style="accent-color: var(--accent-red);" checked />
+              Terima info promo & film terbaru via email
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Buat Akun Sekarang
+          </button>
+
+        </form>
+
+        <div class="auth-footer">
+          Sudah punya akun? <a href="login.html">Masuk di sini</a>
+        </div>
+      </div>
+
+      <!-- Footer kecil -->
+      <div style="text-align:center; margin-top:28px; font-size:11px; color:var(--text-dim); letter-spacing:1px;">
+        &copy; 2025 CINEMAXE &nbsp;·&nbsp; <a href="#">Privasi</a> &nbsp;·&nbsp; <a href="#">Syarat</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

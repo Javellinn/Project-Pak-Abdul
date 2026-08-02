@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tiket Saya — CINEMAXE</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ================================================
+       NAVBAR
+       ================================================ -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-logo">CINEMA<span>XE</span></div>
+      <div class="navbar-tagline">Premium Cinema</div>
+    </div>
+    <div class="navbar-nav">
+      <a href="index.html">🎬 Beranda</a>
+      <a href="booking.html">🎟️ Pesan Tiket</a>
+      <a href="tiket.html" class="active">📄 Tiket Saya</a>
+      <a href="login.html" class="btn-logout">Keluar</a>
+    </div>
+  </nav>
+
+
+  <!-- ================================================
+       TICKET PAGE
+       ================================================ -->
+  <div class="ticket-page">
+
+    <!-- Pesan Sukses -->
+    <div class="ticket-success">
+      <div class="success-icon">✅</div>
+      <h2>Pemesanan <span style="color:var(--accent-red);">Berhasil!</span></h2>
+      <p>Tiket Anda telah dikonfirmasi. Tunjukkan QR Code di bawah kepada petugas bioskop.</p>
+    </div>
+
+
+    <!-- ================================================
+         TIKET UTAMA
+         ================================================ -->
+    <div class="ticket" id="tiket-cetak">
+
+      <!-- Header Tiket -->
+      <div class="ticket-header">
+        <div class="ticket-logo">CINEMA<span>XE</span></div>
+        <div class="ticket-id">
+          <span>NO. TIKET</span>
+          <strong>#CX-2025-08847</strong>
+        </div>
+      </div>
+
+      <!-- Body Tiket -->
+      <div class="ticket-body">
+
+        <!-- Judul Film -->
+        <div class="ticket-movie">
+          <div class="ticket-movie-title">STELLAR VOID</div>
+          <div class="ticket-movie-genre">SCI-FI · PETUALANGAN · IMAX · 2J 28M</div>
+        </div>
+
+        <!-- Detail 4 Kolom -->
+        <div class="ticket-details">
+          <div class="ticket-detail-item">
+            <div class="ticket-detail-label">Tanggal</div>
+            <div class="ticket-detail-value" style="font-size:16px;">15 MEI 2025</div>
+          </div>
+          <div class="ticket-detail-item">
+            <div class="ticket-detail-label">Sesi</div>
+            <div class="ticket-detail-value">10:00</div>
+          </div>
+          <div class="ticket-detail-item">
+            <div class="ticket-detail-label">Studio</div>
+            <div class="ticket-detail-value">IMAX 1</div>
+          </div>
+          <div class="ticket-detail-item">
+            <div class="ticket-detail-label">Pemesan</div>
+            <div class="ticket-detail-value" style="font-size:15px;">BUDI S.</div>
+          </div>
+        </div>
+
+        <!-- Kursi -->
+        <div class="ticket-seats-row">
+          <div class="ticket-seats-label">KURSI</div>
+          <div class="ticket-seats-list">
+            <div class="ticket-seat-tag">B5</div>
+            <div class="ticket-seat-tag">B6</div>
+          </div>
+        </div>
+
+        <!-- Total -->
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); margin-bottom:4px;">Total Pembayaran</div>
+            <div style="font-family:var(--font-display); font-size:28px; color:var(--accent-gold); letter-spacing:2px;">Rp 175.000</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); margin-bottom:4px;">Metode Bayar</div>
+            <div style="font-size:14px; color:var(--text-muted);">Transfer BCA</div>
+          </div>
+        </div>
+
+      </div><!-- /ticket-body -->
+
+
+      <!-- Perforasi / Garis Potong -->
+      <div class="ticket-perforation">
+        <div class="perf-circle"></div>
+        <div class="perf-line"></div>
+        <div class="perf-circle"></div>
+      </div>
+
+
+      <!-- Stub Bawah -->
+      <div class="ticket-stub">
+
+        <!-- Barcode Simulasi -->
+        <div class="stub-barcode">
+          <div class="bar" style="height:80%;"></div>
+          <div class="bar" style="height:60%;"></div>
+          <div class="bar" style="height:90%;"></div>
+          <div class="bar" style="height:40%;"></div>
+          <div class="bar" style="height:100%;"></div>
+          <div class="bar" style="height:70%;"></div>
+          <div class="bar" style="height:55%;"></div>
+          <div class="bar" style="height:85%;"></div>
+          <div class="bar" style="height:45%;"></div>
+          <div class="bar" style="height:75%;"></div>
+          <div class="bar" style="height:30%;"></div>
+          <div class="bar" style="height:95%;"></div>
+          <div class="bar" style="height:60%;"></div>
+          <div class="bar" style="height:80%;"></div>
+          <div class="bar" style="height:50%;"></div>
+          <div class="bar" style="height:70%;"></div>
+          <div class="bar" style="height:85%;"></div>
+          <div class="bar" style="height:40%;"></div>
+          <div class="bar" style="height:65%;"></div>
+          <div class="bar" style="height:90%;"></div>
+          <div class="bar" style="height:35%;"></div>
+          <div class="bar" style="height:75%;"></div>
+          <div class="bar" style="height:55%;"></div>
+          <div class="bar" style="height:100%;"></div>
+        </div>
+
+        <!-- Info Stub -->
+        <div style="text-align:center;">
+          <div style="font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); margin-bottom:6px;">Scan QR</div>
+          <!-- QR Simulasi sederhana dengan CSS -->
+          <div style="
+            width: 70px; height: 70px;
+            background: var(--text-primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 36px;
+            color: var(--bg-dark);
+          ">⬛</div>
+          <div style="font-size:9px; color:var(--text-dim); margin-top:6px; letter-spacing:1px;">CX-2025-08847</div>
+        </div>
+
+        <div class="stub-info">
+          <div class="label">Status</div>
+          <div class="value" style="color: #6ee7a0;">✓ LUNAS</div>
+          <div class="label" style="margin-top:10px;">Pintu</div>
+          <div style="font-family:var(--font-display); font-size:20px; color:var(--text-primary); letter-spacing:1px;">A3</div>
+        </div>
+
+      </div><!-- /ticket-stub -->
+
+    </div><!-- /ticket -->
+
+
+    <!-- Tombol Aksi -->
+    <div class="ticket-actions">
+      <button onclick="window.print()" class="btn btn-gold btn-lg">
+        🖨️ Cetak Tiket
+      </button>
+      <a href="index.html" class="btn btn-secondary btn-lg">
+        🎬 Kembali ke Beranda
+      </a>
+      <a href="booking.html" class="btn btn-secondary btn-lg">
+        🎟️ Pesan Tiket Lagi
+      </a>
+    </div>
+
+
+    <!-- ================================================
+         RIWAYAT TIKET
+         ================================================ -->
+    <div style="margin-top:56px;">
+      <div class="section-header" style="padding: 0;">
+        <div>
+          <div class="section-badge">Riwayat</div>
+          <h2 class="section-title">Tiket <span>Sebelumnya</span></h2>
+        </div>
+      </div>
+
+      <!-- Tabel Riwayat -->
+      <div style="
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-top: 20px;
+      ">
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+          <thead>
+            <tr style="background:var(--bg-surface); border-bottom:1px solid var(--border);">
+              <th style="padding:14px 20px; text-align:left; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); font-weight:600;">No. Tiket</th>
+              <th style="padding:14px 20px; text-align:left; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); font-weight:600;">Film</th>
+              <th style="padding:14px 20px; text-align:left; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); font-weight:600;">Tanggal</th>
+              <th style="padding:14px 20px; text-align:left; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); font-weight:600;">Kursi</th>
+              <th style="padding:14px 20px; text-align:left; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); font-weight:600;">Total</th>
+              <th style="padding:14px 20px; text-align:left; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); font-weight:600;">Status</th>
+              <th style="padding:14px 20px; text-align:left; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); font-weight:600;">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:14px 20px; color:var(--text-muted); font-family:monospace;">#CX-2025-08847</td>
+              <td style="padding:14px 20px; font-weight:600;">Stellar Void</td>
+              <td style="padding:14px 20px; color:var(--text-muted);">15 Mei 2025, 10:00</td>
+              <td style="padding:14px 20px; color:var(--text-muted);">B5, B6</td>
+              <td style="padding:14px 20px; font-weight:600; color:var(--accent-gold);">Rp 175.000</td>
+              <td style="padding:14px 20px;"><span class="badge badge-gold">Aktif</span></td>
+              <td style="padding:14px 20px;"><button onclick="window.print()" class="btn btn-secondary btn-sm">🖨️ Cetak</button></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:14px 20px; color:var(--text-muted); font-family:monospace;">#CX-2025-07212</td>
+              <td style="padding:14px 20px; font-weight:600;">Iron Dynasty</td>
+              <td style="padding:14px 20px; color:var(--text-muted);">2 Mei 2025, 19:45</td>
+              <td style="padding:14px 20px; color:var(--text-muted);">E3, E4, E5</td>
+              <td style="padding:14px 20px; font-weight:600; color:var(--accent-gold);">Rp 225.000</td>
+              <td style="padding:14px 20px;"><span class="badge badge-red">Sudah Ditonton</span></td>
+              <td style="padding:14px 20px;"><button class="btn btn-secondary btn-sm" disabled style="opacity:.4; cursor:not-allowed;">🖨️ Cetak</button></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:14px 20px; color:var(--text-muted); font-family:monospace;">#CX-2025-05488</td>
+              <td style="padding:14px 20px; font-weight:600;">Deep Signal</td>
+              <td style="padding:14px 20px; color:var(--text-muted);">20 Apr 2025, 21:15</td>
+              <td style="padding:14px 20px; color:var(--text-muted);">C7</td>
+              <td style="padding:14px 20px; font-weight:600; color:var(--accent-gold);">Rp 95.000</td>
+              <td style="padding:14px 20px;"><span class="badge badge-red">Sudah Ditonton</span></td>
+              <td style="padding:14px 20px;"><button class="btn btn-secondary btn-sm" disabled style="opacity:.4; cursor:not-allowed;">🖨️ Cetak</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /ticket-page -->
+
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="footer">
+    <p>
+      <strong>CINEMAXE</strong> &nbsp;·&nbsp;
+      Jl. Sudirman No. 88, Jakarta Pusat &nbsp;·&nbsp;
+      (021) 8888-9999
+    </p>
+    <p style="margin-top:10px;">&copy; 2025 CINEMAXE. Hak cipta dilindungi undang-undang.</p>
+  </footer>
+
+</body>
+</html>

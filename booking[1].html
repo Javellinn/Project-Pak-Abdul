@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesan Tiket — CINEMA-SMKTAG</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ================================================
+       NAVBAR
+       ================================================ -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-logo">CINEMA<span>XE</span></div>
+      <div class="navbar-tagline">Premium Cinema</div>
+    </div>
+    <div class="navbar-nav">
+      <a href="index.html">🎬 Beranda</a>
+      <a href="booking.html" class="active">🎟️ Pesan Tiket</a>
+      <a href="tiket.html">📄 Tiket Saya</a>
+      <a href="login.html" class="btn-logout">Keluar</a>
+    </div>
+  </nav>
+
+
+  <!-- ================================================
+       BOOKING HEADER
+       ================================================ -->
+  <div style="padding: 32px 40px 0; border-bottom: 1px solid var(--border); background: var(--bg-card);">
+    <div class="steps-indicator" style="max-width:500px;">
+      <div class="step done">
+        <div class="step-dot">✓</div>
+        <div class="step-label">Pilih Film</div>
+      </div>
+      <div class="step-line done"></div>
+      <div class="step active">
+        <div class="step-dot">2</div>
+        <div class="step-label">Pilih Kursi</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <div class="step-label">Bayar</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-dot">4</div>
+        <div class="step-label">Tiket</div>
+      </div>
+    </div>
+    <div style="padding: 16px 0; font-size:13px; color:var(--text-dim);">
+      Pilih kursi dan sesi tayang untuk melanjutkan pemesanan
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       BOOKING LAYOUT
+       ================================================ -->
+  <div class="booking-layout">
+
+    <!-- ============ KIRI: Pilih Film + Kursi ============ -->
+    <div class="booking-main">
+
+      <!-- Pilih Film -->
+      <div class="section-block">
+        <h3>🎬 Pilih Film & Studio</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilih-film">Film</label>
+            <select id="pilih-film" class="form-control">
+              <option value="">-- Pilih Film --</option>
+              <option value="Mortal Kombat II" selected> Mortal Kombat II (IMAX)</option>
+              <option value="Crocodile Tears (Air Mata Buaya)">Crocodile Tears (Air Mata Buaya) (Dolby)</option>
+              <option value="Salmokji: Whispering Water">Salmokji: Whispering Water (Dolby)</option>
+              <option value="The Bell: Panggilan Untuk Mati">The Bell: Panggilan Untuk Mati (Premier)</option>
+              <option value="Suzanna: Dosa di Atas Dosa">Suzanna: Dosa di Atas Dosa (4DX)</option>
+              <option value="Pelangi di Mars">Pelangi di Mars (VIP)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pilih-studio">Studio</label>
+            <select id="pilih-studio" class="form-control">
+              <option value="1" selected>Studio 1 — IMAX (Rp 50.000)</option>
+              <option value="2">Studio 2 — Premier (Rp 45.000)</option>
+              <option value="3">Studio 3 — 4DX (Rp 60.000)</option>
+              <option value="4">Studio 4 — Dolby (Rp 40.000)</option>
+              <option value="5">Studio 5 — Family (Rp 55.000)</option>
+              <option value="6">Studio 6 — VIP (Rp 75.000)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Pilih Tanggal -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tgl-tayang">Tanggal Tayang</label>
+            <input type="date" id="tgl-tayang" class="form-control" value="2025-05-15"/>
+          </div>
+          <div class="form-group">
+            <label>Sesi Jam Tayang</label>
+            <div class="showtime-grid">
+              <a href="#seat-area" class="showtime-btn selected">10:00</a>
+              <a href="#seat-area" class="showtime-btn">12:30</a>
+              <a href="#seat-area" class="showtime-btn">15:00</a>
+              <a href="#seat-area" class="showtime-btn">17:30</a>
+              <a href="#seat-area" class="showtime-btn">19:45</a>
+              <a href="#seat-area" class="showtime-btn">21:15</a>
+              <a href="#seat-area" class="showtime-btn">22:30</a>
+              <a href="#seat-area" class="showtime-btn">00:00</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- TABEL KURSI -->
+      <div class="section-block" id="seat-area">
+        <h3>💺 Pilih Kursi</h3>
+
+        <!-- Layar -->
+        <div class="screen-container">
+          <div class="screen-bar"></div>
+          <div class="screen-label">Layar</div>
+        </div>
+
+        <!-- ======================================
+             CATATAN PENGEMBANG:
+             Kursi dibuat dengan elemen <button> atau <a>.
+             Kelas CSS:
+               .seat.available  = tersedia (bisa dipilih)
+               .seat.selected   = terpilih (merah)
+               .seat.taken      = sudah dipesan (abu-abu)
+               .seat.vip        = kursi VIP (emas)
+             Kolom 1 adalah label baris (A, B, C, dst.)
+             ====================================== -->
+
+        <!-- Baris A -->
+        <div class="seat-section-label">— Baris Depan (A–C) —</div>
+
+        <div class="seat-grid">
+          <!-- Baris A -->
+          <div class="seat-row-label">A</div>
+          <button class="seat available">A1</button>
+          <button class="seat available">A2</button>
+          <button class="seat taken">A3</button>
+          <button class="seat taken">A4</button>
+          <button class="seat available">A5</button>
+          <button class="seat available">A6</button>
+          <button class="seat taken">A7</button>
+          <button class="seat available">A8</button>
+          <button class="seat available">A9</button>
+          <button class="seat available">A10</button>
+
+          <!-- Baris B -->
+          <div class="seat-row-label">B</div>
+          <button class="seat available">B1</button>
+          <button class="seat taken">B2</button>
+          <button class="seat taken">B3</button>
+          <button class="seat available">B4</button>
+          <button class="seat selected">B5</button>
+          <button class="seat selected">B6</button>
+          <button class="seat available">B7</button>
+          <button class="seat available">B8</button>
+          <button class="seat taken">B9</button>
+          <button class="seat available">B10</button>
+
+          <!-- Baris C -->
+          <div class="seat-row-label">C</div>
+          <button class="seat available">C1</button>
+          <button class="seat available">C2</button>
+          <button class="seat available">C3</button>
+          <button class="seat taken">C4</button>
+          <button class="seat available">C5</button>
+          <button class="seat available">C6</button>
+          <button class="seat taken">C7</button>
+          <button class="seat taken">C8</button>
+          <button class="seat available">C9</button>
+          <button class="seat available">C10</button>
+        </div>
+
+        <div class="seat-section-label">— Baris Tengah (D–G) —</div>
+
+        <div class="seat-grid">
+          <!-- Baris D -->
+          <div class="seat-row-label">D</div>
+          <button class="seat vip available">D1</button>
+          <button class="seat vip available">D2</button>
+          <button class="seat vip taken">D3</button>
+          <button class="seat vip available">D4</button>
+          <button class="seat vip available">D5</button>
+          <button class="seat vip available">D6</button>
+          <button class="seat vip available">D7</button>
+          <button class="seat vip taken">D8</button>
+          <button class="seat vip available">D9</button>
+          <button class="seat vip available">D10</button>
+
+          <!-- Baris E -->
+          <div class="seat-row-label">E</div>
+          <button class="seat vip available">E1</button>
+          <button class="seat vip taken">E2</button>
+          <button class="seat vip avai8
+          uy65 lable">E3</button>
+          <button class="seat vip available">E4</button>
+          <button class="seat vip taken">E5</button>
+          <button class="seat vip taken">E6</button>
+          <button classg="seat vip available">E7</button>
+          <button class="seat vip available">E8</button>
+          <button class="seat vip taken">E9</button>
+          <button class="seat vip available">E10</button>
+
+          <!-- Baris F -->
+          <div class="seat-row-label">F</div>
+          <button class="seat available">F1</button>
+          <button class="seat available">F2</button>
+          <button class="seat taken">F3</button>
+          <button class="seat available">F4</button>
+          <button class="seat available">F5</button>
+          <button class="seat taken">F6</button>
+          <button class="seat available">F7</button>
+          <button class="seat available">F8</button>
+          <button class="seat available">F9</button>
+          <button class="seat taken">F10</button>
+
+          <!-- Baris G -->
+          <div class="seat-row-label">G</div>
+          <button class="seat available">G1</button>
+          <button class="seat available">G2</button>
+          <button class="seat available">G3</button>
+          <button class="seat taken">G4</button>
+          <button class="seat taken">G5</button>
+          <button class="seat available">G6</button>
+          <button class="seat available">G7</button>
+          <button class="seat taken">G8</button>
+          <button class="seat available">G9</button>
+          <button class="seat available">G10</button>
+        </div>
+
+        <div class="seat-section-label">— Baris Belakang (H–J) —</div>
+
+        <div class="seat-grid">
+          <!-- Baris H -->
+          <div class="seat-row-label">H</div>
+          <button class="seat available">H1</button>
+          <button class="seat taken">H2</button>
+          <button class="seat available">H3</button>
+          <button class="seat available">H4</button>
+          <button class="seat available">H5</button>
+          <button class="seat available">H6</button>
+          <button class="seat taken">H7</button>
+          <button class="seat available">H8</button>
+          <button class="seat taken">H9</button>
+          <button class="seat available">H10</button>
+
+          <!-- Baris I -->
+          <div class="seat-row-label">I</div>
+          <button class="seat available">I1</button>
+          <button class="seat available">I2</button>
+          <button class="seat taken">I3</button>
+          <button class="seat taken">I4</button>
+          <button class="seat available">I5</button>
+          <button class="seat available">I6</button>
+          <button class="seat available">I7</button>
+          <button class="seat taken">I8</button>
+          <button class="seat available">I9</button>
+          <button class="seat available">I10</button>
+
+          <!-- Baris J -->
+          <div class="seat-row-label">J</div>
+          <button class="seat available">J1</button>
+          <button class="seat available">J2</button>
+          <button class="seat available">J3</button>
+          <button class="seat available">J4</button>
+          <button class="seat taken">J5</button>
+          <button class="seat taken">J6</button>
+          <button class="seat available">J7</button>
+          <button class="seat available">J8</button>
+          <button class="seat available">J9</button>
+          <button class="seat available">J10</button>
+        </div>
+
+        <!-- Legenda -->
+        <div class="seat-legend">
+          <div class="legend-item">
+            <div class="legend-dot available"></div>
+            <span>Tersedia</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot selected"></div>
+            <span>Dipilih</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot taken"></div>
+            <span>Terisi</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot vip"></div>
+            <span>VIP (+50%)</span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- INFO TAMBAHAN -->
+      <div class="section-block" style="background: rgba(244,185,66,0.04); border-color: rgba(244,185,66,0.15);">
+        <h3 style="color:var(--accent-gold);">ℹ️ Informasi Penting</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:13px; color:var(--text-muted);">
+          <div>
+            <p style="margin-bottom:8px;">📌 Hadir 15 menit sebelum film dimulai</p>
+            <p style="margin-bottom:8px;">🚫 Dilarang membawa makanan dari luar</p>
+            <p>📵 Matikan/silent ponsel selama film</p>
+          </div>
+          <div>
+            <p style="margin-bottom:8px;">🔄 Tiket tidak dapat dikembalikan/ditukar</p>
+            <p style="margin-bottom:8px;">👶 Anak &lt;3 tahun tidak dikenakan biaya</p>
+            <p>♿ Kursi disabilitas tersedia di baris A</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ============ KANAN: Order Summary ============ -->
+    <div class="booking-sidebar">
+      <div class="order-card">
+
+        <div class="order-card-header">
+          <h3>Ringkasan Pesanan</h3>
+        </div>
+
+        <div class="order-card-body">
+
+          <!-- Info Film -->
+          <div class="order-movie-info">
+            <div class="order-movie-poster">🚀</div>
+            <div class="order-movie-detail">
+              <h4>Stellar Void</h4>
+              <p>Studio 1 — IMAX</p>
+              <p>Kamis, 15 Mei 2025</p>
+              <p>Sesi: <strong>10:00</strong></p>
+            </div>
+          </div>
+
+          <!-- Rows -->
+          <div class="order-row">
+            <span class="label">Kursi Dipilih</span>
+            <span class="value">2 kursi</span>
+          </div>
+
+          <div class="order-seats">
+            <div class="seat-tag">B5</div>
+            <div class="seat-tag">B6</div>
+          </div>
+
+          <div class="order-row">
+            <span class="label">Harga per kursi</span>
+            <span class="value">Rp 85.000</span>
+          </div>
+
+          <div class="order-row">
+            <span class="label">Biaya layanan</span>
+            <span class="value">Rp 5.000</span>
+          </div>
+
+          <div class="order-divider"></div>
+
+          <div class="order-total">
+            <span class="label">Total Bayar</span>
+            <span class="amount">Rp 175.000</span>
+          </div>
+
+          <!-- Form Data Diri -->
+          <div class="booking-form">
+            <div class="form-group">
+              <label for="nama-pemesan">Nama Pemesan</label>
+              <input type="text" id="nama-pemesan" class="form-control" placeholder="Nama lengkap" value="Budi Santoso"/>
+            </div>
+            <div class="form-group">
+              <label for="email-pemesan">Email</label>
+              <input type="email" id="email-pemesan" class="form-control" placeholder="Email konfirmasi" value="budi@email.com"/>
+            </div>
+            <div class="form-group">
+              <label for="hp-pemesan">No. HP</label>
+              <input type="tel" id="hp-pemesan" class="form-control" placeholder="08xx-xxxx-xxxx" value="0812-3456-7890"/>
+            </div>
+
+            <!-- Metode Bayar -->
+            <div class="form-group">
+              <label for="metode-bayar">Metode Pembayaran</label>
+              <select id="metode-bayar" class="form-control">
+                <option>Transfer Bank (BCA)</option>
+                <option>Transfer Bank (Mandiri)</option>
+                <option>GoPay</option>
+                <option>OVO</option>
+                <option>Dana</option>
+                <option>Kartu Kredit/Debit</option>
+                <option>Alfamart/Indomaret</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Tombol Bayar -->
+          <a href="tiket.html" class="btn btn-primary btn-block btn-lg" style="text-align:center;">
+            Bayar Sekarang →
+          </a>
+
+          <p style="font-size:11px; color:var(--text-dim); text-align:center; margin-top:12px; letter-spacing:0.5px;">
+            🔒 Pembayaran aman dan terenkripsi
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Promo Code -->
+      <div style="margin-top: 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px 20px;">
+        <label style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px; display:block;">Kode Promo</label>
+        <div style="display:flex; gap:8px;">
+          <input type="text" class="form-control" placeholder="Masukkan kode..." style="flex:1;"/>
+          <button class="btn btn-secondary btn-sm">Terapkan</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /booking-layout -->
+
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="footer">
+    <p>
+      <strong>CINEMAXE</strong> &nbsp;·&nbsp;
+      Jl. Sudirman No. 88, Jakarta Pusat &nbsp;·&nbsp;
+      (021) 8888-9999
+    </p>
+    <p style="margin-top:10px;">&copy; 2025 CINEMAXE. Hak cipta dilindungi undang-undang.</p>
+  </footer>
+
+</body>
+</html>
