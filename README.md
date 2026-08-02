@@ -3,4 +3,4 @@
 <P><i>requiem👻</i></P>
 <br>
 <p>Link Web:</p>
-https://Javellinn.github.io/Project-Pak-Abdul
+https://github.com/javellinn/Project-Pak-Abdul/tree/gh-pages
